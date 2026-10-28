@@ -120,6 +120,42 @@ A rule-based customer support chatbot that recognizes greetings and common quest
 
 Keep `sample_faq.json` in the same folder as `chatbot.py`.
 
+### Task 5: Enterprise Smart Inventory & Asset System
+
+An object-oriented Python application for managing books, magazines, and digital media. It demonstrates core OOP concepts through an inventory management system.
+
+**Features**
+- Uses an abstract base class named `LibraryItem`.
+- Implements `Book`, `Magazine`, and `DigitalMedia` subclasses.
+- Demonstrates inheritance, abstraction, encapsulation, and polymorphism.
+- Uses private attributes and property-based price validation.
+- Implements `__str__`, `__repr__`, `__eq__`, and `__len__` magic methods.
+- Supports adding items and checking out and returning inventory items.
+- Calculates late fees according to item type.
+- Generates a tabular inventory display and an audit report.
+- Handles duplicate item IDs, invalid item IDs, and invalid late-day inputs.
+
+**Technologies Used**
+- Python 3
+- `abc` module
+- `datetime` module
+- Object-oriented programming
+- Properties and validation
+- Magic methods
+- Exception handling
+
+**How to Run**
+1. Open the `Task5_SmartInventory` folder in the terminal.
+2. Run:
+
+   `python inventory.py`
+
+3. Use the menu to display inventory, check out items, return items, or generate an audit report.
+
+**Reference:** [Official Python Classes Documentation](https://docs.python.org/3/tutorial/classes.html)
+
+**Note:** The late-fee amounts are example rules used for this project.
+
 ## Project Structure
 
 ```text
@@ -134,11 +170,14 @@ Datheon_Python_Internship/
 │   └── portfolio_summary.csv
 ├── Task3_FileOrganizer/
 │   └── organizer.py
-└── Task4_Chatbot/
-    ├── chatbot.py
-    └── sample_faq.json
+├── Task4_Chatbot/
+│   ├── chatbot.py
+│   └── sample_faq.json
+└── Task5_SmartInventory/
+    ├── models.py
+    └── inventory.py
 ```
 
 ## Internship Goal
 
-To improve Python programming skills by building practical beginner-level projects and documenting the work completed during the internship.
+To improve Python programming skills by building practical projects, applying programming concepts, solving problems, and documenting the work completed during the internship.
