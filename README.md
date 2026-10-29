@@ -143,9 +143,6 @@ Datheon_Python_Internship/
 │   └── portfolio_summary.csv
 ├── Task3_FileOrganizer/
 │   └── organizer.py
-├── Task4_Chatbot/
-│   ├── chatbot.py
-│   └── sample_faq.json
 └── Task5_SmartInventory/
     ├── models.py
     └── inventory.py
