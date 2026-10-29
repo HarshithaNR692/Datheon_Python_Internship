@@ -1,0 +1,85 @@
+import json
+import re
+from pathlib import Path
+
+FAQ_FILE = Path(__file__).with_name("sample_faq.json")
+
+try:
+    with open(FAQ_FILE, "r", encoding="utf-8") as file:
+        data = json.load(file)
+except (FileNotFoundError, json.JSONDecodeError) as error:
+    print(f"Error loading FAQ dataset: {error}")
+    raise SystemExit(1)
+
+greetings = data.get("greetings", [])
+faqs = data.get("faqs", [])
+
+def normalize(text):
+    text = text.lower().strip()
+    text = re.sub(r"[^\w\s]", " ", text)
+    return re.sub(r"\s+", " ", text)
+
+def get_response(user_input):
+    message = normalize(user_input)
+
+    if not message:
+        return "Please enter a question."
+
+    if re.search(r"\b(bye|exit|quit)\b", message):
+        return "Goodbye! Thank you for chatting. EXIT"
+
+    for greeting in greetings:
+        if re.search(r"\b" + re.escape(normalize(greeting)) + r"\b", message):
+            return "Hello! Welcome to our support assistant. How can I help you?"
+
+    matched_answers = []
+
+    for faq in faqs:
+        question = normalize(faq.get("question", ""))
+        keywords = [
+            word for word in question.split()
+            if len(word) > 3 and word not in {
+                "what", "when", "your", "have", "does", "from"
+            }
+        ]
+
+        if question and question in message:
+            matched_answers.append(faq.get("answer", "Sorry, no answer is available."))
+        elif keywords and sum(
+            1 for word in set(keywords) if re.search(r"\b" + re.escape(word) + r"\b", message)
+        ) >= min(2, len(set(keywords))):
+            matched_answers.append(faq.get("answer", "Sorry, no answer is available."))
+
+    if matched_answers:
+        return "\n".join(dict.fromkeys(matched_answers))
+
+    if re.search(r"\b(hours|timing|open|closing|operation)\b", message):
+        return "Our business hours are Monday through Friday, 9:00 AM to 6:00 PM IST."
+
+    return (
+        "Sorry, I didn't understand that question. "
+        "You can ask about business hours, project submission, or certificates."
+    )
+
+def main():
+    print("=" * 45)
+    print("   RULE-BASED CUSTOMER SUPPORT CHATBOT")
+    print("=" * 45)
+    print("Ask me about business hours, project submission, or certificates.")
+    print("Type bye, exit, or quit to end the chat.")
+
+    while True:
+        try:
+            user_input = input("\nYou: ")
+            response = get_response(user_input)
+            print("Bot:", response)
+
+            if response.endswith("EXIT"):
+                break
+
+        except (KeyboardInterrupt, EOFError):
+            print("\nBot: Goodbye! Have a nice day.")
+            break
+
+if __name__ == "__main__":
+    main()
