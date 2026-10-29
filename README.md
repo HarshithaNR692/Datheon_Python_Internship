@@ -91,34 +91,7 @@ A Python utility that organizes files into separate folders based on their file 
 
 **Note:** Choose your target folder carefully because the program moves files into category folders.
 
-### Task 4: Rule-Based Interactive Terminal Assistant / Chatbot
 
-A rule-based customer support chatbot that recognizes greetings and common questions, provides relevant answers, and handles unknown queries.
-
-**Features**
-- Recognizes greetings such as hello, hi, and hey.
-- Answers questions about business hours.
-- Provides internship project submission information.
-- Answers certificate-related questions using a JSON FAQ dataset.
-- Matches questions using keywords and regular expressions.
-- Provides fallback responses for unrecognized questions.
-- Supports `bye`, `exit`, and `quit` commands.
-- Handles missing or invalid JSON files gracefully.
-
-**Technologies Used**
-- Python 3
-- `json` module
-- `re` module (regular expressions)
-- File handling
-- Exception handling
-
-**How to Run**
-1. Open the `Task4_Chatbot` folder in the terminal.
-2. Run:
-
-   `python chatbot.py`
-
-Keep `sample_faq.json` in the same folder as `chatbot.py`.
 
 ### Task 5: Enterprise Smart Inventory & Asset System
 
