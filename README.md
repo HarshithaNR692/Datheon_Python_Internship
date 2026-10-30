@@ -1,14 +1,15 @@
-# Datheon Python Internship
+Datheon Python Internship
 
 Python programming internship projects completed as part of the Datheon Python Programming Internship.
 
-## Tasks
+Tasks
 
-### Task 1: Hangman Word Guessing Game
+Task 1: Hangman Word Guessing Game
 
 A beginner-friendly, console-based word guessing game developed using Python.
 
-**Features**
+Features
+
 - Random word selection from a word list.
 - Displays hidden letters using underscores.
 - Accepts one letter at a time.
@@ -17,121 +18,103 @@ A beginner-friendly, console-based word guessing game developed using Python.
 - Displays hangman stages as incorrect guesses increase.
 - Shows a win or loss message at the end.
 
-**Technologies Used**
+Technologies Used
+
 - Python 3
-- `random` module
+- "random" module
 - File handling
 - Sets and loops
 
-**How to Run**
-1. Open the `Task1_Hangman` folder in the terminal.
+How to Run
+
+1. Open the "Task1_Hangman" folder in the terminal.
+
 2. Run:
+   
+   "python hangman.py"
 
-   `python hangman.py`
+Keep "words.txt" in the same folder as "hangman.py".
 
-Keep `words.txt` in the same folder as `hangman.py`.
-
-### Task 2: Stock Portfolio Performance Tracker
+Task 2: Stock Portfolio Performance Tracker
 
 A Python program that calculates stock investment values, profit or loss, and percentage changes, then saves the results to a CSV report.
 
-**Features**
+Features
+
 - Loads S&P 500 company tickers from a CSV dataset.
 - Checks whether portfolio tickers exist in the dataset.
 - Calculates total investment and current portfolio value.
 - Calculates profit or loss and percentage change for each stock.
-- Generates a `portfolio_summary.csv` report.
+- Generates a "portfolio_summary.csv" report.
 - Displays the overall portfolio summary in the terminal.
 
-**Technologies Used**
+Technologies Used
+
 - Python 3
-- `csv` module
+- "csv" module
 - Dictionaries and loops
 - File handling
 
-**Note:** The current stock prices are sample values, not live market prices.
+Note: The current stock prices are sample values, not live market prices.
 
-**How to Run**
-1. Open the `Task2_StockPortfolio` folder in the terminal.
+How to Run
+
+1. Open the "Task2_StockPortfolio" folder in the terminal.
+
 2. Run:
+   
+   "python portfolio.py"
 
-   `python portfolio.py`
+Keep "constituents.csv" in the same folder as "portfolio.py". The program generates "portfolio_summary.csv" when it runs.
 
-Keep `constituents.csv` in the same folder as `portfolio.py`. The program generates `portfolio_summary.csv` when it runs.
+Task 4: Rule-Based Interactive Terminal Assistant / Chatbot
 
-### Task 3: Automated File Organizer & Cleanup Utility
+A rule-based conversational chatbot developed using Python. It recognizes user intents through keywords and regular expressions and provides relevant responses to common questions.
 
-A Python utility that organizes files into separate folders based on their file extensions.
+Features
 
-**Features**
-- Organizes files into Documents, Images, Videos, Archives, and Code folders.
-- Scans the selected folder for files.
-- Creates category folders automatically.
-- Moves supported files using `shutil.move()`.
-- Avoids overwriting files when duplicate filenames exist.
-- Handles permission and file operation errors.
-- Displays a summary of moved, skipped, and failed files.
+- Recognizes multiple user intents.
+- Handles questions about business hours and product FAQs.
+- Uses keywords and regular expressions to understand user input.
+- Provides contextual responses to user queries.
+- Uses a JSON file to store sample FAQ data.
+- Includes fallback responses for unrecognized questions.
+- Supports exit commands such as "bye", "exit", and "quit".
+- Runs interactively in the terminal.
 
-**Technologies Used**
+Technologies Used
+
 - Python 3
-- `os` module
-- `shutil` module
-- `pathlib` module
-- Exception handling
+- "re" module for regular expressions
+- "json" module for FAQ data
+- Dictionaries and conditional statements
+- Functions and loops
+- String processing
 
-**How to Run**
-1. Open the `Task3_FileOrganizer` folder in the terminal.
+How to Run
+
+1. Open the "Task4_Chatbot" folder in the terminal.
+
 2. Run:
+   
+   "python chatbot.py"
 
-   `python organizer.py`
+Keep "sample_faq.json" in the same folder as "chatbot.py".
 
-3. Enter the path of the folder you want to organize.
+Example Interaction
 
-**Reference:** [Official Python shutil Documentation](https://docs.python.org/3/library/shutil.html)
+Chatbot: Hello! Welcome to our customer support assistant.
+You: What are your business hours?
+Chatbot: Our business hours are 9 AM to 6 PM.
+You: Tell me about your products.
+Chatbot: Please check our product FAQs for more information.
+You: bye
+Chatbot: Goodbye! Have a nice day.
 
-**Note:** Choose your target folder carefully because the program moves files into category folders.
+Note: The example responses above are illustrative. Actual responses depend on the rules and FAQ data implemented in the chatbot.
 
+Project Structure
 
-
-### Task 5: Enterprise Smart Inventory & Asset System
-
-An object-oriented Python application for managing books, magazines, and digital media. It demonstrates core OOP concepts through an inventory management system.
-
-**Features**
-- Uses an abstract base class named `LibraryItem`.
-- Implements `Book`, `Magazine`, and `DigitalMedia` subclasses.
-- Demonstrates inheritance, abstraction, encapsulation, and polymorphism.
-- Uses private attributes and property-based price validation.
-- Implements `__str__`, `__repr__`, `__eq__`, and `__len__` magic methods.
-- Supports adding items and checking out and returning inventory items.
-- Calculates late fees according to item type.
-- Generates a tabular inventory display and an audit report.
-- Handles duplicate item IDs, invalid item IDs, and invalid late-day inputs.
-
-**Technologies Used**
-- Python 3
-- `abc` module
-- `datetime` module
-- Object-oriented programming
-- Properties and validation
-- Magic methods
-- Exception handling
-
-**How to Run**
-1. Open the `Task5_SmartInventory` folder in the terminal.
-2. Run:
-
-   `python inventory.py`
-
-3. Use the menu to display inventory, check out items, return items, or generate an audit report.
-
-**Reference:** [Official Python Classes Documentation](https://docs.python.org/3/tutorial/classes.html)
-
-**Note:** The late-fee amounts are example rules used for this project.
-
-## Project Structure
-
-```text
 Datheon_Python_Internship/
 ├── README.md
 ├── Task1_Hangman/
@@ -141,16 +124,10 @@ Datheon_Python_Internship/
 │   ├── portfolio.py
 │   ├── constituents.csv
 │   └── portfolio_summary.csv
-├── Task3_FileOrganizer/
-│   └── organizer.py
-├── Task4_Chatbot/
-│   ├── chatbot.py
-│   └── sample_faq.json
-└── Task5_SmartInventory/
-    ├── models.py
-    └── inventory.py
-```
+└── Task4_Chatbot/
+    ├── chatbot.py
+    └── sample_faq.json
 
-## Internship Goal
+Internship Goal
 
 To improve Python programming skills by building practical projects, applying programming concepts, solving problems, and documenting the work completed during the internship.
